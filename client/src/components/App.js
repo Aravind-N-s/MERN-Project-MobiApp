@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import _ from "lodash";
 
 /* components */
+import Steps from './stepZilla'
 import Comment from "./review and comment/comment";
 import ReviewShow from "./review and comment/reviewDisplay";
 import Account from "./user/account";
@@ -13,7 +14,7 @@ import Login from "./user/login";
 import Logout from "./user/logout";
 import Register from './user/register';
 
-import InitialForm from "./product/initial";
+import Initial from "./product/initial";
 import GeneralForm from "./specification/general";
 import DesignForm from "./specification/design";
 import DisplayForm from "./specification/display";
@@ -22,6 +23,8 @@ import StorageForm from "./specification/storage"
 import CameraForm from './specification/camera';
 import BatteryForm from "./specification/battery";
 import NetworkForm from './specification/network';
+import MultimediaForm from './specification/multimedia';
+import SprecialForm from './specification/special'
 
 class App extends React.Component{
   render() {
@@ -45,7 +48,7 @@ class App extends React.Component{
               </div>
             )}
 
-            <Link to="/products/initial">
+            {/* <Link to="/products/initial">
               <h2>Add</h2>
             </Link>
             <Link to="/product/specification/general">
@@ -72,19 +75,25 @@ class App extends React.Component{
             <Link to="/product/specification/network">
               <h2>Network</h2>
             </Link>
+            <Link to="/product/specification/multimedia">
+              <h2>Multimedia</h2>
+            </Link>
+            <Link to="/product/specification/special">
+              <h2>Special</h2>
+            </Link> */}
             {/* <Link to="/reviews"><h2>Review Write</h2></Link> */}
             {/* <Link to="/reviews" ><h2>Review show</h2></Link> */}
             {/* <Link to="/comments" ><h2>Comment add</h2></Link> */}
-
+            
             <Switch>
               <Route exact path="/users/register" component={Register} />
               <Route exact path="/users/login" component={Login} />
               <Route exact path="/users/account" component={Account} />
               <Route exact path="/users/logout" component={Logout} />
-
+              <Route exact path="/add" component={Steps} />
               <Route
                 path="/products/initial"
-                component={InitialForm}
+                component={Initial}
                 exact={true}
               />
               <Route
@@ -118,6 +127,14 @@ class App extends React.Component{
               <Route
                 path="/product/specification/network"
                 component={NetworkForm}
+              />
+              <Route
+                path="/product/specification/multimedia"
+                component={MultimediaForm}
+              />
+              <Route
+                path="/product/specification/special"
+                component={SprecialForm}
               />
               <Route path="/reviews" component={ReviewShow} />
               <Route path="/comments" component={Comment} />

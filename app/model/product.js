@@ -4,15 +4,13 @@ const Schema = mongoose.Schema
 
 const ProductSchema = new Schema({
     productName:{
-        type: String,
-        required: true
+        type: String
     },
     images:[{
         type: String
     }],
     productPrice:{
-        type: Number,
-        default: 123
+        type: Number
     },
     createdAt:{
         type: Date,

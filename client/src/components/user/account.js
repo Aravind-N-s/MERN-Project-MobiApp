@@ -15,7 +15,8 @@ class Account extends React.Component {
         console.log(response.data)
         const user = response.data
         this.props.dispatch(setUser(user))
-        this.props.history.push('/products')
+        this.props.history.push("/add")
+        // this.props.history.push("/products/initial");
       })
       .catch(err => {
         console.log(err)

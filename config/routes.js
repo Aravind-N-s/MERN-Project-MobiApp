@@ -14,8 +14,9 @@ const reviewController = require('../app/controller/reviewController')
 const addressController = require('../app/controller/addressController')
 const commentController = require('../app/controller/commentController')
 
+
 router.get("/products", productController.list);
-router.post("/products", authenticationUser,authenticateUser, productController.create);
+router.post("/products",authenticationUser,authenticateUser, productController.create);
 router.get('/products/:id', productController.show)
 router.put("/products/:id",authenticationUser,authenticateUser,productController.update);
 router.delete("/products/:id",authenticationUser,authenticateUser,productController.destroy);

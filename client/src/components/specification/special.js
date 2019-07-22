@@ -1,6 +1,6 @@
 import React from "react";
 
-class MultimediaForm extends React.Component {
+class SprecialForm extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -23,16 +23,16 @@ class MultimediaForm extends React.Component {
   render() {
     return (
       <div>
-        <h2>Multimedia:</h2>
+        <h2>Special Features:</h2>
         <form>
           <div>
-            <label htmlFor="fmr">FM Radio:</label>
-            <input to="fmr" type="checkbox" />
+            <label htmlFor="fngr">FingerPrint Sensor:</label>
+            <input to="fngr" type="checkbox" />
           </div>
           <br />
           <div>
-            <label htmlFor="ldsp">Loud Speaker:</label>
-            <input to="ldsp" type="checkbox" />
+            <label htmlFor="spos">Sensor Position:</label>
+            <input to="spos" type="checkbox" />
           </div>
           <br />
           <div>
@@ -48,10 +48,17 @@ class MultimediaForm extends React.Component {
             </select>
           </div>
           <br />
+          <div>
+            <label>other Sensor:</label>
+            <select>
+              <option />
+            </select>
+          </div>
+          <br />
           <button type="submit">Submit</button>
         </form>
       </div>
     );
   }
 }
-export default MultimediaForm;
+export default SprecialForm;
