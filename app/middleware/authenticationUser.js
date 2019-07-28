@@ -17,4 +17,4 @@ const authenticationUser = (req,res,next) => {
   })
 } 
 
-module.exports = authenticationUser
+module.exports = {authenticationUser}
