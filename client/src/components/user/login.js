@@ -1,13 +1,13 @@
 import React from 'react'
 
 /* packages */
-import axios from 'axios'
+import axios from '../../config/axios'
 
 import FormLogin from './loginForm'
 
 class UserLogin extends React.Component {
   handleLogin = (data) => {
-    axios.post('http://localhost:3005/users/login', data)
+    axios.post('/users/login', data)
       .then(response => {
         console.log(response.data)
         if (response.data.error) {
@@ -17,6 +17,9 @@ class UserLogin extends React.Component {
           localStorage.setItem('userAuthToken', token)
           this.props.history.push('/users/account')
         }
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
   render() {

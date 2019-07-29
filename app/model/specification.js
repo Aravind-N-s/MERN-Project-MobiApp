@@ -4,53 +4,57 @@ const Product = require('./product')
 const Schema = mongoose.Schema
 
 const SpecificationSchema = new Schema({
-  product:{
-		type: Schema.Types.ObjectId,
-		ref: 'User'
-	},
+  product: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
   launchDate: {
     type: Date
   },
   brand: {
-    type: Schema.Types.ObjectId,
-    ref: "Brand"
-  },
-  model: {
     type: String
   },
   operatingSystem: {
-    type: String,
-    default: "andriod 9.0"
+    type: String
   },
   phonetype: {
-    type: String,
-    default: "SmartPhone"
+    type: String
+  },
+  slots:{
+    type:String
   },
   simSlot: [
     {
       sim: {
-        type: String,
-        number: Number,
+        simType: String,
+        simNumber:Number,
         isVolTE: Boolean,
         size: String,
         network: {
-          type: Schema.Types.ObjectId,
-          ref: "Network"
+          fourG: {
+            type: Boolean
+          },
+          threeG: {
+            type: Boolean
+          },
+          twoG: {
+            type: Boolean
+          }
         }
       }
     }
   ],
   height: {
-    type: Number
+    type: String
   },
   width: {
-    type: Number
+    type: String
   },
   thickness: {
-    type: Number
+    type: String
   },
   weight: {
-    type: Number
+    type: String
   },
   colors: [
     {
@@ -64,13 +68,13 @@ const SpecificationSchema = new Schema({
     type: Number
   },
   screenResolution: {
-    type: Number
+    type: String
   },
   aspectRatio: {
     type: Number
   },
   pixelDensity: {
-    type: Number
+    type: String
   },
   displayType: {
     type: String
@@ -80,9 +84,6 @@ const SpecificationSchema = new Schema({
   },
   touchScreen: {
     type: String
-  },
-  screenToBodyRatio: {
-    type: Number
   },
   chipset: {
     type: String
@@ -101,12 +102,10 @@ const SpecificationSchema = new Schema({
     type: String
   },
   internalMemory: {
-    type: Number,
-    default: 64
+    type: String
   },
-  Expandable: {
-    type: Number,
-    default: false
+  ExpandableMemory: {
+    type: String
   },
   isOtgSupport: {
     type: Boolean,
@@ -139,7 +138,7 @@ const SpecificationSchema = new Schema({
     type: String
   },
   imageResolution: {
-    type: Number
+    type: String
   },
   setting: {
     type: String,
@@ -157,7 +156,7 @@ const SpecificationSchema = new Schema({
     type: String
   },
   batteryCapacity: {
-    type: Number
+    type: String
   },
   batteryType: {
     type: String,
@@ -168,12 +167,30 @@ const SpecificationSchema = new Schema({
     default: false
   },
   batteryLife: {
-    type: String,
-    default: "Up to 251 Hours(2G)"
+    hours: {
+      type:Number
+    },
+    for:{
+      type:String
+    }
   },
-  suport: {
+  networkSupport: {
     type: String
   },
+  isVolTE:{
+    type: Boolean,
+    default:false,
+  },
+  bands:[{
+    sim: {
+      num:Number,
+      fG:String,
+      thG:String,
+      TwG:String,  
+    }
+  }
+   
+  ],
   wifiSupport: {
     type: String,
     default: "2.4 only"
@@ -188,19 +205,31 @@ const SpecificationSchema = new Schema({
   },
   gps: {
     type: String,
-    default: "with A-GPS, Glonass"
+    default: "Glonass"
   },
-  connectivity: {
+  usbConnectivity: {
     type: String,
-    default: "	Mass storage device, USB charging"
+    default: "Mass storage device, USB charging"
+  },
+  isUSBC:{
+    type:Boolean,
+    default:false
+  },
+  fmRadio:{
+    type:Boolean,
+    default:false
   },
   loudSpeaker: {
-    type: String,
-    default: "Yes"
+    type: Boolean,
+    default: false
   },
   audioJack: {
     type: String,
     default: "3.5mm"
+  },
+  audioFeature:{
+    type:String,
+    defalut: "Dolby Atmos"
   },
   isFingerPrintSensor: {
     type: Boolean,
@@ -218,7 +247,7 @@ const SpecificationSchema = new Schema({
     type: String,
     default: "Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope"
   }
-})
+});
 
 const Specification = mongoose.model('Specification', SpecificationSchema)
 

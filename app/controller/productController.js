@@ -15,32 +15,31 @@ module.exports.list = (req,res) => {
 module.exports.create = (req,res) => {
 	const { user } = req;
 	const body = req.body
-	let images = [];
-
+	// let images = [];
+	console.log(req.body)
 	
-	upload(req, res, function(error) {
-	if (error) {
-		res.json({
-			msg: error
-		});
-	} else {
-		if (req.files == null) {
-			res.status(400).json({
-				msg: "Error: No Files Selected"
-			});
-		} else {
-			req.files.forEach(file => {
-				images.push(`uploads/${file.filename}`)
-			})/*`uploads/${file.filename}`)*/
-				res.status('200').json({
-					msg: "File Uploaded",
-			});
-		}
-	}})
-   console.log(images)
+	// upload(req, res, function(error) {
+	// if (error) {
+	// 	res.json({
+	// 		msg: error
+	// 	});
+	// } else {
+	// 	if (req.files == null) {
+	// 		res.status(400).json({
+	// 			msg: "Error: No Files Selected"
+	// 		});
+	// 	} else {
+	// 		req.files.forEach(file => {
+	// 			images.push(`uploads/${file.filename}`)
+	// 		})/*`uploads/${file.filename}`)*/
+	// 			res.status('200').json({
+	// 				msg: "File Uploaded",
+	// 		});
+	// 	}
+	// }})
     const product = new Product(body)
     product.user = user._id
-    product.images = images
+    // product.images = images
     product.save()
     .then((product) => {
 			res.send(product)

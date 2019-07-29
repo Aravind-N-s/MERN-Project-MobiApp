@@ -4,7 +4,6 @@ import InitialForm from './initialForm'
 
 class Initail extends React.Component{
 	handleSubmit = (formData) => {
-    console.log(formData)
     axios.post("http://localhost:3005/products", formData, {
       headers:{
         'x-auth': localStorage.getItem('userAuthToken')

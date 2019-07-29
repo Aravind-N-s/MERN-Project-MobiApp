@@ -14,28 +14,27 @@ import MultimediaForm from "./specification/multimedia";
 import SprecialForm from "./specification/special";
 
 const steps = [
-	{ name: "Add", component: <InitialForm /> },
-	{ name: "General", component: <GeneralForm /> },
-	{ name: "Design", component: <DesignForm /> },
-	{ name: "Display", component: <DisplayForm /> },
-	{ name: "Performance", component: <PerformanceForm /> },
-	{ name: "Storage", component: <StorageForm /> },
-	{ name: "Camera Battery", component: <CameraForm /> },
-	{ name: "Battery", component: <BatteryForm /> },
+  { name: "Inital", component: <InitialForm /> },
+  { name: "General", component: <GeneralForm /> },
+  { name: "Design", component: <DesignForm /> },
+  { name: "Display", component: <DisplayForm /> },
+  { name: "Performance", component: <PerformanceForm /> },
+  { name: "Storage", component: <StorageForm /> },
+  { name: "Camera", component: <CameraForm /> },
+  { name: "Battery", component: <BatteryForm /> },
 
-	{ name: "Network", component: <NetworkForm /> },
-	{ name: "Multimedia", component: <MultimediaForm /> },
-	{ name: "special", component: <SprecialForm /> }
+  { name: "Network", component: <NetworkForm /> },
+  { name: "Multimedia", component: <MultimediaForm /> },
+  { name: "special", component: <SprecialForm /> }
 ];
 
 class Steps extends React.Component {
 	render(){
-		return(
-			<div>
-				<br />
-				<StepZilla steps={steps} />
-			</div>
-		)
+		return (
+      <div className="step-progress">
+        <StepZilla steps={steps} />
+      </div>
+    );
 	}
 }
 

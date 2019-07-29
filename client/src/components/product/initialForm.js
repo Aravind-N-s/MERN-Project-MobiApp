@@ -22,17 +22,16 @@ class Initial extends React.Component{
 	}
 	handleSubmit = (e) => {
     e.preventDefault()
-    let data = new FormData();
-    data.append("images", this.state.selectFile)
-    // for(let file of this.state.selectFile){
-    //   data.append("images", file);
-    // }
-    const formData = {
-      productPrice: this.state.price,
+    // let data = new FormData();
+    // data.append("productPrice", this.state.price)
+    // data.append("productName", this.state.name)
+    // data.append("images", this.state.selectFile)
+    const data = {
       productName: this.state.name,
-      images:data
-    };
-   this.props.handleSubmit(formData)
+      productPrice: this.state.price
+    }
+
+   this.props.handleSubmit(data)
 	}
 	render(){
     console.log(this.state)
