@@ -26,10 +26,18 @@ const SpecificationSchema = new Schema({
   simSlot: [
     {
       sim: {
-        simType: String,
-        simNumber:Number,
-        isVolTE: Boolean,
-        size: String,
+        simType: {
+          type:String
+        },
+        simNumber:{
+          type:Number
+        },
+        isVolTE: {
+          type:Boolean
+        },
+        size: {
+          type:String
+        },
         network: {
           fourG: {
             type: Boolean
@@ -183,10 +191,18 @@ const SpecificationSchema = new Schema({
   },
   bands:[{
     sim: {
-      num:Number,
-      fG:String,
-      thG:String,
-      TwG:String,  
+      num:{
+        type:Number
+      },
+      fG:{
+        type:String
+      },
+      thG:{
+        type:String
+      },
+      TwG:{
+        type:String
+      }
     }
   }
    
