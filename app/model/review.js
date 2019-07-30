@@ -4,7 +4,7 @@ const  Schema = mongoose.Schema
 const reviewSchema = new Schema({
   title:{
     type:String
-  },
+  }, 
   body: {
     type:String,
   },

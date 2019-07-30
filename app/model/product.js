@@ -4,28 +4,21 @@ const Schema = mongoose.Schema
 
 const ProductSchema = new Schema({
     productName:{
-        type: String,
-        required: true
+        type: String
     },
-    image:{
-        type: String,
-        default: null
-    },
+    images:[{
+        type: String
+    }],
     productPrice:{
-        type: Number,
-        default: 123
-    },
-    // reviews:{
-    //     type: SChema.Types.ObjectId,
-    //     ref: ''
-    // },
-    specification:{
-        type: Schema.Types.ObjectId,
-        ref: 'Specification'
+        type: Number
     },
     createdAt:{
         type: Date,
         default: Date.now()
+    },
+    user:{
+        type:Schema.Types.ObjectId,
+        ref:'User'
     }
 })
 

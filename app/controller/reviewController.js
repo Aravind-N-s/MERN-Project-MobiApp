@@ -3,11 +3,11 @@ const Review = require('../model/review')
 const _ = require('lodash')
 
 module.exports.create = (req,res) => {
-  const {user} = req
-  const product = req.query.productId
+  // const {user} = req
+  // const product = req.query.productId
   const review = new Review(req.body)
-  review.user = user._id
-  review.product = product
+  // review.user = user._id
+  // review.product = product
   review.save()
   .then(review => {
     res.send(_.pick(review, ['_id', 'title', 'body', 'issues', 'rating', 'createdAt', 'user', 'product']))
@@ -17,11 +17,9 @@ module.exports.create = (req,res) => {
   })
 }
 module.exports.list = (req,res) => {
-  const productId = req.query.productId
-  console.log(productId)
-  Review.find({
-    product:productId
-  }).populate('user',['userName','createdAt']).populate('product',['productName'])
+  // const productId = req.query.productId
+  // console.log(productId)
+  Review.find().populate('user',['userName','createdAt']).populate('product',['productName'])
   .then(products => {
     res.json(products)
   })
