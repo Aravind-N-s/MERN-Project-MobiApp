@@ -1,10 +1,12 @@
 const express = require('express')
 const cors = require('cors')
+const app = express()
 const {mongoose} = require('./config/database')
 
 const router = require('./config/routes')
- 
-const app = express()
+
+app.use(express.static("./public"));
+
 const port = 3005
 
 app.use(express.json())

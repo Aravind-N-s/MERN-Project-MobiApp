@@ -15,7 +15,5 @@ mongoose.connect('mongodb://localhost:27017/mern-project-mobiapp', { useNewUrlPa
         console.log('ERROR connected to DB')
     })
 
-module.exports = {
-    mongoose
-}
+module.exports = mongoose
 //single value sent module.export = mongoose

@@ -16,11 +16,11 @@ module.exports.list = (req,res) => {
 }
 
 module.exports.create = (req,res) => {
-  const {user} = req
-  const reviewId = req.query.reviewId
+  // const {user} = req
+  // const reviewId = req.query.reviewId
   const comment = new Comment(req.body)
-  comment.user = user._id
-  comment.review = reviewId
+  // comment.user = user._id
+  // comment.review = reviewId
   comment.save()
   .then(comment => {
     res.send(_.pick(comment,['_id', 'body', 'review', 'isLike', 'user']))
