@@ -14,10 +14,15 @@ import Login from './user/login'
 import Account from './user/account'
 import Logout from './user/logout'
 
+import {Typography} from '@material-ui/core'
+
 class App extends React.Component{
   render() {
     return (
       <div>
+        <Typography>
+          MobiApp          
+        </Typography>
         <BrowserRouter>
           <div>
             {_.isEmpty(localStorage.getItem('userAuthToken')) && 

@@ -29,7 +29,7 @@ router.post('/brands', brandController.create)
 
 router.post('/users/register',userController.register)
 router.post('/users/login',userController.login)
-router.delete('/users/logout',authenticateUser,userController.logout)
+router.delete('/users/logout',authenticationUser,userController.logout)
 router.get('/users/account', authenticationUser, userController.account)
 
 router.get('/addressess', authenticationUser, addressController.list)
