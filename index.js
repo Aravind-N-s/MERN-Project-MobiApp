@@ -7,7 +7,7 @@ const router = require('./config/routes')
 
 app.use(express.static("./public"));
 
-const port = 3005
+const port = 3006
 
 app.use(express.json())
 app.use(cors())

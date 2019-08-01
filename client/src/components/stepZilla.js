@@ -1,41 +1,36 @@
 import React from 'react'
 import StepZilla from 'react-stepzilla'
 
-import InitialForm from "./product/initial";
-import GeneralForm from "./specification/general";
-import DesignForm from "./specification/design";
-import DisplayForm from "./specification/display";
-import PerformanceForm from "./specification/performance";
-import StorageForm from "./specification/storage";
-import CameraForm from "./specification/camera";
-import BatteryForm from "./specification/battery";
-import NetworkForm from "./specification/network";
-import MultimediaForm from "./specification/multimedia";
-import SprecialForm from "./specification/special";
+import ProductForm from './productAdmin/productForm'
+import SpecificationGeneralForm from './productAdmin/genSpecForm'
+import SpecificationDimForm from './productAdmin/dimSpecForm'
+import SpecificationDisForm from './productAdmin/disSpecForm'
+import SpecificationPerForm from './productAdmin/perSpecForm'
+import SpecificationCamBatForm from './productAdmin/camBatSpecForm'
+import SpecificationConForm from './productAdmin/conSpecForm'
+import SpecificationMulForm from './productAdmin/mulSpecForm'
 
-const steps = [
-  { name: "Inital", component: <InitialForm /> },
-  { name: "General", component: <GeneralForm /> },
-  { name: "Design", component: <DesignForm /> },
-  { name: "Display", component: <DisplayForm /> },
-  { name: "Performance", component: <PerformanceForm /> },
-  { name: "Storage", component: <StorageForm /> },
-  { name: "Camera", component: <CameraForm /> },
-  { name: "Battery", component: <BatteryForm /> },
-
-  { name: "Network", component: <NetworkForm /> },
-  { name: "Multimedia", component: <MultimediaForm /> },
-  { name: "special", component: <SprecialForm /> }
-];
+const steps =
+    [
+      {name: 'Product Add',component: <ProductForm />},
+      {name: 'General Specification',component: <SpecificationGeneralForm />},
+      {name: 'Dimension Specification',component: <SpecificationDimForm />},
+      {name: 'Display Specification',component: <SpecificationDisForm />},
+      {name: 'Performance Specification',component: <SpecificationPerForm />},
+      {name: 'Camera Battery',component: <SpecificationCamBatForm />},
+      {name: 'Connectivity',component: <SpecificationConForm />},
+      {name: 'Multimedia, Features', component: <SpecificationMulForm />}
+    ]
 
 class Steps extends React.Component {
-	render(){
-		return (
-      <div className="step-progress">
-        <StepZilla steps={steps} />
-      </div>
-    );
-	}
+    render(){
+        return(
+            <div>
+                <br />
+                <StepZilla steps={steps} />
+            </div>
+        )
+    }
 }
 
 export default Steps
