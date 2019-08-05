@@ -1,2 +1,2 @@
 Notes App
-Full with front and back end with authentication
+Project Shut down due to difficulties
